@@ -76,7 +76,7 @@ app.get('/enquiry', (req, res) => {
 });
 
 app.post('/submit', (req, res) => {
-  const sql = "INSERT INTO enquiry values ('" + req.body.name + "','" + req.body.email + "','" + req.body.message + "')";
+  const sql = "INSERT INTO enquiry values ('1','" + req.body.name + "','" + req.body.email + "','" + req.body.message + "')";
   con.query(sql, (err) => {
     if (err) throw err;
     console.log("Data inserted into the database.");
