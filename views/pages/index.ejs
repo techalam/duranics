@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curves, Waves, and Blobs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="productslides.js"></script> -->
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>-->
+  <!-- <script src="script.js"></script>  -->
+
+  
+
+  
+</head>
+
+<body>
+  <section class="blue" id="firstPage">
+
+    
+    
+    <header class=" body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4  md:border-gray-400	flex flex-wrap items-center text-base justify-right" id="navbar">
+          <a class="mr-5 px-3 hover:text-gray-900" href="index">Home</a>
+          <a class="mr-5 px-3 hover:text-gray-900" href="product">Products</a>
+          <a class="mr-5 px-3 hover:text-gray-900" href="enquiry">Enquiry</a>
+          <a class="mr-5 px-3 hover:text-gray-900" href="aboutus">About Us</a>
+        </nav>
+        <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button -->
+          <!-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24"> -->
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+  
+    <div class="wrap-o" data-animate="" data-animate-y="5" data-animate-delay="600">
+
+      <!-- <video src="img/istockphoto-1362944575-640_adpp_is.mp4" loop autoplay muted></video> -->
+      <div class="wrap-i">
+        <div class="cta-text">
+          <div class="waviy">
+            <span style="--i:1">D</span>
+            <span style="--i:2">U</span>
+            <span style="--i:3">R</span>
+            <span style="--i:4">A</span>
+            <span style="--i:5">N</span>
+            <span style="--i:6">I</span>
+            <span style="--i:7">C</span>
+            <span style="--i:8">S</span>
+            
+          </div>
+          <a href="https://www.poppr.be/en/contact" class="button">
+            <span class="button-bg">
+              <span class="button-bg-layers">
+                <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+              </span>
+            </span>
+            <span class="button-inner">
+            </span>
+          </a>
+        </div>
+        <div id="move"></div>
+      </div>
+    </div>
+    
+
+    <div class="curve"></div>
+
+
+    <!-- slideshow.............................. -->
+    
+
+    
+      
+      
+      
+      
+      
+
+
+  
+  </section>
+
+  <section>
+    <div class="flex-container">
+      <% images.forEach(function(image){ %>
+      <div class="flex-item bg-one tilt">
+        <a href="products/<%= image.id %>"> <span><img src="data:image/jpeg;base64,<%= image.base64Image %>"></span> 
+              <div class="text">
+                <%= image.price %>
+            </div>
+              
+            </a>
+      </div>
+      <% }) %>
+      
+
+  
+  </div>
+
+  
+  
+
+ 
+
+  
+
+
+</div>
+    <!-- partial -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js'></script><script  src="js/script.js"></script>
+  
+      
+      
+     
+  
+    </section>
+
+  <section class="bubble">
+
+    
+    <div class="lense-horizontal" data-widget-name="" data-widget-type="lenses" data-widget-order="3" data-total-widget="11">
+  
+  
+      <a  id="first"  href="/corporate-gifts/gourmet-hampers?sort=created_desc" class="lense-box widget-impression-item" data-item-name="Gourmet" onclick="onclickDataLayer('lenses_click', {'item_name': `Gourmet`, 'item_position': 4, 'item_url': `https://www.igp.com/corporate-gifts/gourmet-hampers?sort=created_desc`, 'lenses_name': ``}); onclickDataLayer('widget_click', {'widget_name':``,'widget_type':`lenses`,'widget_order':3,'total_widgets':11,'item_name':`Gourmet`})">
+  
+          <img src="img/p1.webp" data-original="https://cdn.igp.com/f_auto,q_auto,t_pnoptprodlp/banners/gourmet_corporate_igp_lenses_20220906.jpg" class="lense-img no-background">
+  
+              <span class="lense-text">Mobile Stand</span>
+  
+      </a>
+  
+  
+      <a href="/corporate-gifts/plants" class="lense-box widget-impression-item" data-item-name="Plants" onclick="onclickDataLayer('lenses_click', {'item_name': `Plants`, 'item_position': 5, 'item_url': `https://www.igp.com/corporate-gifts/plants`, 'lenses_name': ``}); onclickDataLayer('widget_click', {'widget_name':``,'widget_type':`lenses`,'widget_order':3,'total_widgets':11,'item_name':`Plants`})">
+  
+          <img src="img/p2.webp" data-original="https://cdn.igp.com/f_auto,q_auto,t_pnoptprodlp/banners/plants_corporate_igp_lenses_20220902.jpg" class="lense-img no-background">
+  
+              <span class="lense-text">Laptop Stand</span>
+  
+      </a>
+  
+  
+      <a href="/corporate-gifts/cakes" class="lense-box widget-impression-item" data-item-name="Cakes" onclick="onclickDataLayer('lenses_click', {'item_name': `Cakes`, 'item_position': 6, 'item_url': `https://www.igp.com/corporate-gifts/cakes`, 'lenses_name': ``}); onclickDataLayer('widget_click', {'widget_name':``,'widget_type':`lenses`,'widget_order':3,'total_widgets':11,'item_name':`Cakes`})">
+  
+          <img src="img/p3.jpg" data-original="https://cdn.igp.com/f_auto,q_auto,t_pnoptprodlp/banners/cakes_corporate_igp_lenses_20220921.jpg" class="lense-img no-background">
+  
+              <span class="lense-text">Retro Lamp</span>
+  
+      </a>
+  
+  
+      <a href="/corporate-gifts/home-appliances" class="lense-box widget-impression-item" data-item-name="Appliances" onclick="onclickDataLayer('lenses_click', {'item_name': `Appliances`, 'item_position': 7, 'item_url': `https://www.igp.com/corporate-gifts/home-appliances`, 'lenses_name': ``}); onclickDataLayer('widget_click', {'widget_name':``,'widget_type':`lenses`,'widget_order':3,'total_widgets':11,'item_name':`Appliances`})">
+  
+          <img src="img/p4.webp" data-original="https://cdn.igp.com/f_auto,q_auto,t_pnoptprodlp/banners/home_appliances_corporate_igp_lenses_20220902.jpg" class="lense-img no-background">
+  
+              <span class="lense-text">Portable Table</span>
+  
+      </a>
+  
+  
+      <a href="/corporate-gifts/power-banks" class="lense-box widget-impression-item" data-item-name="Power Banks" onclick="onclickDataLayer('lenses_click', {'item_name': `Power Banks`, 'item_position': 8, 'item_url': `https://www.igp.com/corporate-gifts/power-banks`, 'lenses_name': ``}); onclickDataLayer('widget_click', {'widget_name':``,'widget_type':`lenses`,'widget_order':3,'total_widgets':11,'item_name':`Power Banks`})">
+  
+          <img src="img/p5.jpg" data-original="https://cdn.igp.com/f_auto,q_auto,t_pnoptprodlp/banners/powerbanks_main_corporate_igp_lenses_20220902.jpg" class="lense-img no-background">
+  
+              <span class="lense-text">Data Cable</span>
+  
+      </a>
+  
+  
+  </div>
+
+
+  
+  <h1 id="category">BROWSE BY CATEGORIES</h1>
+  
+</section>
+
+
+<section class="dark">
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+      <% images.forEach(function(image){ %>
+        
+      <img class="image" src="data:image/jpeg;base64,<%= image.base64Image %>" draggable="false" />
+      <% }) %>
+      
+      
+    </div>
+    <!-- partial -->
+      <script src='https://kit.fontawesome.com/944eb371a4.js'></script><script  src="js/productslides.js"></script>
+    
+
+  </section>
+
+  <section id = "potm" class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap" style="margin: auto;
+    display: flex;
+    justify-content: space-between;">
+      <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
+        <div class="w-full sm:p-4 px-4 mb-6">
+          <h1 class="title-font font-medium text-xl mb-2 ">Moon hashtag pop-up try-hard offal truffaut</h1>
+          <div class="leading-relaxed">Pour-over craft beer pug drinking vinegar live-edge gastropub, keytar neutra sustainable fingerstache kickstarter.</div>
+        </div>
+        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+          <h2 class="title-font font-medium text-3xl text-gray-900">2.7K</h2>
+          <p class="leading-relaxed">Visits</p>
+        </div>
+        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+          <h2 class="title-font font-medium text-3xl text-gray-900">1.8K</h2>
+          <p class="leading-relaxed">Orders</p>
+        </div>
+        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+          <h2 class="title-font font-medium text-3xl text-gray-900">35</h2>
+          <p class="leading-relaxed">Reviews</p>
+        </div>
+        
+      </div>
+      <div id="rainbow" class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0 ">
+        <img class="object-cover object-center " id = "pimg" src="img/p2.webp" alt="stats">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Trending This Month -->
+
+  <section class="bubble">
+
+    <!-- latest one's -->
+
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <h1 id="category" style="color: white !important; justify-content: center;">LATEST PRODUCTS</h1>
+        <!-- <h1 style="font-size: 2.5vw; color: white !important;  justify-content: center; display: flex; margin-bottom: 5vh;">Latest products</h1> -->
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <% var limitedItems = images.slice(0, 3); %>
+          <% limitedItems.forEach(function(image){ %>
+          <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+            <div class="rounded-lg h-64 overflow-hidden" style="background-color: white;">
+              <img alt="content" class="object-cover object-center " src="data:image/jpeg;base64,<%= image.base64Image %>" style="width:18vw;">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5"><%= image.name %></h2>
+            <p class="text-base leading-relaxed mt-2"><%= image.description %></p>
+            <a class="text-indigo-500 inline-flex items-center mt-3" href="products/<%= image.id %>">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    
+  
+</section>
+
+  
+
+  <!-- footer -->
+
+  <footer class=" body-font" id="footer">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          
+        <span class="ml-3 text-xl">Duranics</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+        <!-- <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a> -->
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+  
+  
+
+
+</body>
+
+</html>
