@@ -76,13 +76,13 @@ app.get('/enquiry', (req, res) => {
 });
 
 app.post('/submit', (req, res) => {
-  // const sql = "INSERT INTO enquiry values ('" + req.body.name + "','" + req.body.email + "','" + req.body.message + "')";
-  // con.query(sql, (err) => {
-  //   if (err) throw err;
-  //   console.log("Data inserted into the database.");
+  const sql = "INSERT INTO enquiry values ('" + req.body.name + "','" + req.body.email + "','" + req.body.message + "')";
+  con.query(sql, (err) => {
+    if (err) throw err;
+    console.log("Data inserted into the database.");
     res.render('pages/enquiry');
   })
-// });
+});
 
 app.get('/aboutus', (req, res) => {
   res.render('pages/aboutus');
