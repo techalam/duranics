@@ -1,7 +1,7 @@
 var express = require('express');
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
+var mysql = require('mysql2');
 // const port = process.env.PORT || 3000;
 var SESSION_SECRET_KEY = "asdfgthftdgcvfgrtdgshycgsfdrefdh";
 // import {createPool} from 'mysql2/promise';
