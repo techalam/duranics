@@ -80,7 +80,7 @@ app.post('/submit', (req, res) => {
   // con.query(sql, (err) => {
   //   if (err) throw err;
   //   console.log("Data inserted into the database.");
-    res.render('Thanks To Submit The Form');
+    res.render('pages/enquiry');
   })
 // });
 
