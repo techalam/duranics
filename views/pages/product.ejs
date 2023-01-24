@@ -419,7 +419,7 @@
                         <% images.forEach(function(image){ %>
                         <div class="lg:w-1/4 md:w-1/2 p-4 w-full" >
                           <a href="products/<%= image.id %>" class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="data:image/jpeg;base64,<%= image.base64Image %>">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/<%= image.base64Image %>">
                           </a>
                           <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><%= image.category %></h3>
