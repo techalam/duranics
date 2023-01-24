@@ -122,7 +122,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
   const price = req.body.price;
   const sale_price = req.body.sale_price;
   const quantity = req.body.quantity;
-  const image = req.file; // path of the uploaded file
+  const image = req.file.path; // path of the uploaded file
   const category = req.body.category;
   const type = req.body.type;
 
