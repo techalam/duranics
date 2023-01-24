@@ -2,9 +2,17 @@ var express = require('express');
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var mysql = require('mysql2');
+const multer = require("multer");
 // const port = process.env.PORT || 3000;
 var SESSION_SECRET_KEY = "asdfgthftdgcvfgrtdgshycgsfdrefdh";
 // import {createPool} from 'mysql2/promise';
+
+const fs = require('fs');
+const path = require('path');
+const uploadsFolder = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsFolder)) {
+  fs.mkdirSync(uploadsFolder);
+}
 
 
 const PORT = process.env.PORT || 3000
@@ -39,22 +47,20 @@ var app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.listen(PORT);
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// const MYSQLDATABASE = "railway";
-// const MYSQLHOST = "containers-us-west-47.railway.app";
-// const MYSQLPASSWORD = "XAVYmsUqkJXYsWh4LwX1";
-// const MYSQLPORT = "6663";
-// const MYSQLUSER = "root";
+  app.use(express.static('uploads'));
 
 // var con = mysql.createConnection({
 
-//   "MYSQLDATABASE" : "railway",
-//   "MYSQLHOST" : "containers-us-west-47.railway.app",
-//   "MYSQLPASSWORD" : "XAVYmsUqkJXYsWh4LwX1",
-//   "MYSQLPORT" : "6663",
-//   "MYSQLUSER" : "root"
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, 'uploads/');
+    },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+const upload = multer({ storage });
     
 //     })
 
@@ -74,6 +80,9 @@ con.connect();
 app.get('/enquiry', (req, res) => {
   res.render('pages/enquiry');
 });
+app.get('/admin',(req,res) =>{
+res.render('pages/admin');
+});
 
 app.post('/submit', (req, res) => {
   const sql = "INSERT INTO enquiry values ('" + req.body.name + "','" + req.body.email + "','" + req.body.message + "')";
@@ -83,6 +92,58 @@ app.post('/submit', (req, res) => {
     res.render('pages/enquiry');
   })
 });
+
+// app.post('/upload', upload.single('file'),(req,res) =>{
+
+//   file = req.file
+//   // const name = req.body.name
+
+//   id = req.body.id
+//   price = req.body.price
+//   description = req.body.description
+//   sale_price = req.body.sale_price
+//   quantity = req.body.quantity
+//   category = req.body.category
+//   type = req.body.type
+// q = "INSERT INTO products VALUES(?,?,?,?,?,?,?,?,?)"
+// con.query(q,[id,description,price,sale_price,quantity,file,category,type],(err,rows,fields)=>{
+//   if(err) throw err;
+// })
+// res.redirect("/admin");
+//   // console.log(image);
+
+//     });
+
+app.post('/upload', upload.single('image'), (req, res) => {
+  //extract form data
+  const id = req.body.id;
+  const name = req.body.name;
+  const description = req.body.description;
+  const price = req.body.price;
+  const sale_price = req.body.sale_price;
+  const quantity = req.body.quantity;
+  const image = req.file; // path of the uploaded file
+  const category = req.body.category;
+  const type = req.body.type;
+
+  //insert data into products table
+  const query = `INSERT INTO products (id, name, description, price, sale_price, quantity, image, category, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  con.query(query, [id, name, description, price, sale_price, quantity, image, category, type], (error, results) => {
+    if (error) {
+      //handle error
+      console.log(error);
+    } else {
+      //success
+      res.render('pages/admin');
+    }
+  });
+});
+
+
+
+
+
+
 
 app.get('/aboutus', (req, res) => {
   res.render('pages/aboutus');
@@ -107,7 +168,8 @@ app.get('/products/:id', (req, res) => {
 
     const product = [];
     // result.forEach((results) => {
-      var base64Img = new Buffer.from(productS.image, 'binary').toString('base64');
+      // var base64Img = new Buffer.from(productS.image, 'binary').toString('base64');
+      var base64Img = productS.image;
       product.push({ price: productS.price, name: productS.name, id: productS.id, description: productS.description, category: productS.category, base64Img });
 
     var productSingle = product[0];
@@ -174,3 +236,5 @@ app.get('/', function (req, res) {
     // });
   });
 });
+// app.listen(port);
+app.listen(PORT);
