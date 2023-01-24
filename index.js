@@ -200,7 +200,8 @@ app.get('/', function (req, res) {
     if (err) throw err;
     const images = [];
     result.forEach((results) => {
-      var base64Image = new Buffer.from(results.image, 'binary').toString('base64');
+//       var base64Image = new Buffer.from(results.image, 'binary').toString('base64');
+      var base64Image = results.image;
       images.push({ price: results.price, name: results.name, id: results.id, description: results.description, category: results.category, base64Image });
       const limitedItems = images.slice(0, 3);
       console.log(result);
