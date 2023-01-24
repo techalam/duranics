@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+<style>
+  input{
+    border: 1px solid gray;
+    height: 5vh;
+  }
+  button{
+    height: 5vh;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<form action="/upload" method="post" enctype="multipart/form-data">
+   <input type="number" id="id" name="id" placeholder="id">
+   <input type="text" id="name" name="name" placeholder="name">
+   <input type="text" id="description" name="description" placeholder="description">
+   <input type="number" id="price" name="price" placeholder="price">
+   <input type="number" id="sale_price" name="sale_price" placeholder="sale_price">
+   <input type="text" id="quantity" name="quantity" placeholder="quantity">
+   <input type="file" id="image" name="image" placeholder="image">
+   <input type="text" id="category" name="category" placeholder="category">
+   <input type="text" id="type" name="type" placeholder="type">
+   <button type="submit" value="submit">Submit</button>
+  </form>
+</body>
+</html>
