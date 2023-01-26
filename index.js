@@ -77,6 +77,41 @@ con.connect();
 // });
 
 
+ app.get('/products/:id', (req, res) => {
+  // console.log("From prudct/ ids");
+  var productId = req.params.id;
+
+  // console.log(res);
+  con.query(`SELECT price, image, name, description, category FROM products WHERE id = '${productId}'`, (err, result) => {
+    if (err) throw err;
+    console.log("productSingle=",result, result[0]);
+//     var product = images.filter(image =>{
+//     return image.id == productId;
+//     })
+        var productS = result[0];
+
+    const product = [];
+    // result.forEach((results) => {
+      // var base64Img = new Buffer.from(productS.image, 'binary').toString('base64');
+      var base64Img1 = productS.image;
+      var base64Img = base64Img1.substring(8);
+      product.push({ price: productS.price, name: productS.name, id: productS.id, description: productS.description, category: productS.category, base64Img });
+
+    var productSingle = product[0];
+  //   console.log("++++++++++++++++++++++++++");
+  //   // console.log(result);
+  //   console.log("++++++++++++++++++++++++++");
+  // res.sendFile(__dirname + '/static/newroute/product.css');
+    res.render('pages/products', {productSingle: productSingle });
+  
+  });
+
+
+
+
+});
+
+
 app.get('/enquiry', (req, res) => {
   res.render('pages/enquiry');
 });
@@ -182,46 +217,7 @@ app.get('/', function (req, res) {
     app.get('/product', (reqq, ress) => {
       ress.render('pages/product', { images: images });
       
-      
-      app.get('/products/:id', (req, res) => {
-  // console.log("From prudct/ ids");
-  var productId = req.params.id;
-
-  // console.log(res);
-//   con.query(`SELECT price, image, name, description, category FROM products WHERE id = '${productId}'`, (err, result) => {
-//     if (err) throw err;
-//     console.log("productSingle=",result, result[0]);
-    var product = images.filter(image =>{
-    return image.id == productId;
-    })
-        var productS = product[0];
-
-    const product = [];
-    // result.forEach((results) => {
-      // var base64Img = new Buffer.from(productS.image, 'binary').toString('base64');
-      var base64Img1 = productS.image;
-      var base64Img = base64Img1.substring(8);
-      product.push({ price: productS.price, name: productS.name, id: productS.id, description: productS.description, category: productS.category, base64Img });
-
-    var productSingle = product[0];
-  //   console.log("++++++++++++++++++++++++++");
-  //   // console.log(result);
-  //   console.log("++++++++++++++++++++++++++");
-  // res.sendFile(__dirname + '/static/newroute/product.css');
-    res.render('pages/products', {productSingle: productSingle });
-  
-  });
-
-
-
-
-});
-
-      
-      
-      
-      
-    });
+   });
     // app.get('/products/:id', (req, res) => {
     //   // Retrieve product data from database
 
