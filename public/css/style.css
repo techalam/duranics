@@ -244,7 +244,6 @@ h2 {
 }
 
 
-
 .flex-container .flex-item:focus {
     box-shadow: 0 0 3pt 2pt red;
 }
