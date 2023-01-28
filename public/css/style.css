@@ -216,6 +216,7 @@ h2 {
     flex-flow: row wrap;
     padding: 0em 1em;
     gap: 10px;
+    width:100vw;
     /* background: #180148; */
 
 }
