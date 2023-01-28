@@ -230,7 +230,7 @@ h2 {
 
 @media (max-width: 450px) {
   .flex-container .flex-item{
-    margin: 5px;
+    margin: 10px;
   }
   .blue{
     height: 65vh !important;
