@@ -222,7 +222,7 @@ h2 {
 }
 
 .flex-container .flex-item {
-/*     margin: 20px; */
+    margin: 5px;
     border-radius: 2px;
     padding: 4.5em 5em;
     position: relative;
