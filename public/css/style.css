@@ -595,7 +595,7 @@ h2 {
     #rainbow{
       border: 7px solid hsl(0, 100%, 50%);
       animation: rainbow 0.8s infinite alternate;
-      max-width: 35vw;
+/*       max-width: 35vw; */
     }
 
     #footer{
