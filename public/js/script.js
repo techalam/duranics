@@ -20,15 +20,15 @@
 // });
 
 
-// function sorting(){
-// 	var sorting = document.getElementById('sort');
-// if(sorting.style.display == "block"){
-// 	sorting.style.display = "none";
-// }
-// else{
-// 	sorting.style.display = "block";
-// }
-// 	}
+function sorting(){
+	var sorting = document.getElementById('sort');
+if(sorting.style.display == "block"){
+	sorting.style.display = "none";
+}
+else{
+	sorting.style.display = "block";
+}
+	}
 
 
 
