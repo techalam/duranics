@@ -30,6 +30,14 @@ else{
 }
 	}
 
+function showFilters() {
+    // debugger;
+    var listbg = document.getElementById("filterbg");
+    var listfilter = document.getElementById("filterContain");
+    listbg.classList.toggle("mystyle");
+    listfilter.classList.toggle("mystyle2");
+}
+
 
 
 
