@@ -157,7 +157,9 @@ app.post('/upload', upload.single('image'), (req, res) => {
   const price = req.body.price;
   const sale_price = req.body.sale_price;
   const quantity = req.body.quantity;
-  const image = req.file.path // path of the uploaded file
+  const imagePath = req.file.path // path of the uploaded file
+  const imageBinary = fs.readFileSync(imagePath);
+   const image = new Buffer.from(imageBinary).toString('base64');
   const category = req.body.category;
   const type = req.body.type;
 
