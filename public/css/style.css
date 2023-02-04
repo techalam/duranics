@@ -231,6 +231,15 @@ h2 {
 }
 
 @media (max-width: 450px) {
+
+#productContainer{
+   display:flex;
+   gap:2%;
+}
+
+.productShape{
+      width: 49%;
+    }
     
     #filterContain, #filterbg{
     display: none;
@@ -610,10 +619,6 @@ h2 {
 
 
     /* slideshow */
-    
-.productShape{
-      width: 50%;
-    }
 
     .mystyle,.mystyle2{
       display: block !important;
