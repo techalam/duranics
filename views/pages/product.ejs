@@ -44,9 +44,9 @@
             From: "opacity-100"
             To: "opacity-0"
         -->
-        <div class="fixed inset-0 bg-black bg-opacity-25" id="flexBg"></div>
+        <div class="fixed inset-0 bg-black bg-opacity-25" id="filterbg"></div>
   
-        <div class="fixed inset-0 z-40 flex" id="flexMenu">
+        <div class="fixed inset-0 z-40 flex" id="filterContain">
           <!--
             Off-canvas menu, show/hide based on off-canvas menu state.
   
@@ -60,7 +60,7 @@
           <div class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
             <div class="flex items-center justify-between px-4">
               <h2 class="text-lg font-medium text-gray-900">Filters</h2>
-              <button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400">
+              <button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400" onclick="showFilters()">
                 <span class="sr-only">Close menu</span>
                 <!-- Heroicon name: outline/x-mark -->
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -280,10 +280,10 @@
         <div class="flex items-baseline justify-between border-b border-gray-200 pt-24 pb-6">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
   
-          <div class="flex items-center" id="sorting" onclick="sorting()">
+          <div class="flex items-center" >
             <div class="relative inline-block text-left">
               <div>
-                <button type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900" id="menu-button" aria-expanded="false" aria-haspopup="true">
+                <button id="sorting" onclick="sorting()" type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900" id="menu-button" aria-expanded="false" aria-haspopup="true">
                   Sort
                   <!-- Heroicon name: mini/chevron-down -->
                   <svg class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -322,14 +322,7 @@
               </div>
             </div>
   
-            <button type="button" class="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-              <span class="sr-only">View grid</span>
-              <!-- Heroicon name: mini/squares-2x2 -->
-              <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z" clip-rule="evenodd" />
-              </svg>
-            </button>
-            <button type="button" class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
+            <button type="button" class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden" onclick="showFilters()" >
               <span class="sr-only">Filters</span>
               <!-- Heroicon name: mini/funnel -->
               <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -417,7 +410,7 @@
                     <div class="container px-5 py-24 mx-auto">
                       <div class="flex flex-wrap -m-4">
                         <% images.forEach(function(image){ %>
-                        <div class="lg:w-1/4 md:w-1/2 p-4 w-full" >
+                        <div class="productShape" >
                           <a href="products/<%= image.id %>" class="block relative h-48 rounded overflow-hidden">
                             <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/<%= image.base64Image.substring(8) %>">
                           </a>
