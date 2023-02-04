@@ -611,7 +611,14 @@ display:none;
 
     /* slideshow */
     
+.productShape{
+      width: 50%;
+    }
 
+    .mystyle,.mystyle2{
+      display: block !important;
+    }
+    
     
 
   
