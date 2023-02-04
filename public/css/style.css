@@ -232,9 +232,9 @@ h2 {
 
 @media (max-width: 450px) {
     
-    #flexBg, #flexMenu{
-display:none;
-}
+    #filterContain, #filterbg{
+    display: none;
+  }
     
     .flex-container .flex-item{
     margin:5px;
