@@ -216,35 +216,26 @@ app.get('/', function (req, res) {
       console.log("connection created");
     });
     res.render('pages/index', { images: images });
-    app.get('/product', (reqq, ress) => {
-      ress.render('pages/product', { images: images });
-      
-   });
-    // app.get('/products/:id', (req, res) => {
-    //   // Retrieve product data from database
-
-    //   const productName = req.params.id;
-    //   console.log(productName);
-    //   console.log(images);
-    //   var product = images.filter(function (item) {
-    //     console.log(product);
-    //     return item.id == productName;
-
-    //   })
-    //   var productClicked = product[0];
-
-    //   // Query the database for the product
-    //   // const sqll = `SELECT name,description,price FROM products WHERE name = '${productName}'`;
-    //   // con.query(sqll, function (err, result) {
-    //   //   if (err) throw err;
-    //   //   var product = result[0];
-    //   //   console.log(result[0]);
-    //   // Render the template and pass in the product data
-
-    //   res.render('pages/products', { productClicked: productClicked });
-
-    // });
+    
   });
+});
+
+app.get('/product', (reqq, ress) => {
+  con.query("SELECT price, image, name, id, description , category FROM products", (err, result) => {
+    console.log({ result });
+    if (err) throw err;
+    const images = [];
+    result.forEach((results) => {
+//       var base64Image = new Buffer.from(results.image, 'binary').toString('base64');
+      var base64Image = results.image;
+      images.push({ price: results.price, name: results.name, id: results.id, description: results.description, category: results.category, base64Image });
+      const limitedItems = images.slice(0, 3);
+      console.log(result);
+      console.log("connection created");
+    });
+  ress.render('pages/product', { images: images });
+  
+});
 });
 // app.listen(port);
 app.listen(PORT);
