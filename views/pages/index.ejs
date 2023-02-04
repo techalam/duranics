@@ -99,7 +99,7 @@
     <div class="flex-container">
       <% images.forEach(function(image){ %>
       <div class="flex-item bg-one tilt">
-        <a href="products/<%= image.id %>"> <span><img src="<%= image.base64Image.substring(8) %>"></span> 
+        <a href="products/<%= image.id %>"> <span><img src="data:image/jpeg;base64,<%= image.base64Image%>"></span> 
               <div class="text">
                 <%= image.name %>
             </div>
