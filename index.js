@@ -93,8 +93,8 @@ con.connect();
     const product = [];
     // result.forEach((results) => {
       // var base64Img = new Buffer.from(productS.image, 'binary').toString('base64');
-      var base64Img1 = productS.image;
-      var base64Img = base64Img1.substring(8);
+      var base64Img = productS.image;
+//       var base64Img = base64Img1.substring(8);
       product.push({ price: productS.price, name: productS.name, id: productS.id, description: productS.description, category: productS.category, base64Img });
 
     var productSingle = product[0];
