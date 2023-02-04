@@ -9,7 +9,6 @@
   <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
 
-</head>
 <body>
     
 <!--
@@ -412,7 +411,7 @@
                         <% images.forEach(function(image){ %>
                         <div class="productShape" >
                           <a href="products/<%= image.id %>" class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/<%= image.base64Image.substring(8) %>">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="data:image/jpeg;base64,/<%= image.base64Image %>">
                           </a>
                           <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><%= image.category %></h3>
