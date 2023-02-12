@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-<style>
+  <script src="https://cdn.tailwindcss.com"></script>
+<!-- <style>
   input{
     border: 1px solid gray;
     height: 5vh;
@@ -17,20 +17,148 @@
     background-color: blue;
     color: white;
   }
+</style> -->
+
+<style>
+  body {
+    font-family: sans-serif;
+    background-color: #f7fafc;
+    overflow: auto;
+  }
+  h1 {
+    color: #2d3748;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 0;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  label {
+    display: block;
+    color: #4a5568;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    color: #2d3748;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    transition: border-color 0.2s ease-in-out;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #cbd5e0;
+  }
+  input[type="file"] {
+    padding: 0.5rem 0.75rem;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4299e1;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  button[type="submit"]:hover {
+    background-color: #2b6cb0;
+  }
 </style>
+
 </head>
 <body>
-<form action="/upload" method="post" enctype="multipart/form-data">
-   <input type="number" id="id" name="id" placeholder="id">
-   <input type="text" id="name" name="name" placeholder="name">
-   <input type="text" id="description" name="description" placeholder="description">
-   <input type="number" id="price" name="price" placeholder="price">
-   <input type="number" id="sale_price" name="sale_price" placeholder="sale_price">
-   <input type="text" id="quantity" name="quantity" placeholder="quantity">
-   <input type="file" id="image" name="image" placeholder="image">
-   <input type="text" id="category" name="category" placeholder="category">
-   <input type="text" id="type" name="type" placeholder="type">
-   <button type="submit" value="submit">Submit</button>
-  </form>
+
+  <h1 class="text-4xl font-extrabold text-center text-gray-800 mt-12">
+    Upload Your Product
+  </h1>
+  
+
+  <form class=" mx-auto" action="/upload" method="post" enctype="multipart/form-data">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="id">
+        ID
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="id" name="id" type="text" placeholder="Enter ID">
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="name">
+        Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" placeholder="Enter Name">
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="price">
+        Price
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="price" name="price" type="text" placeholder="Enter Price">
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="sale_price">
+        Sale Price
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sale_price" name="sale_price" type="text" placeholder="Enter Sale Price">
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="description">
+        Description
+      </label>
+      <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="4" placeholder="Enter Description"></textarea>
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="image">
+        Image
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" name="image" type="file" placeholder="Enter Image URL">
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="category">
+        Category
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category" name="category">
+      
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="quantity">
+       quantity
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="quantity" name="quantity" type="text" placeholder="Quantity">
+    </div>
+    <div class="mb-4" style="width: 45%;">
+      <label class="block text-gray-700 font-bold mb-2" for="type">
+        Type
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="type" name="type">
+        </div>
+      
+      </div>
+      <div class="mb-4" style="width: 50%; margin: auto;">
+        <!-- <label class="block text-gray-700 font-bold mb-2" for="quantity">
+         quantity
+        </label> -->
+        <button class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 leading-tight focus:outline-none focus:shadow-outline" id="submit" name="submit" type="submit">submit</button>
+      </div>
+      </form>
+  
 </body>
 </html>
