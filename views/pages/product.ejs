@@ -432,5 +432,38 @@
     </div>
   </div>
   
+  <script>
+  const checkboxes = document.querySelectorAll('input[class="mainCheckbox h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"]');
+  const products = document.querySelectorAll('.productShape');
+  
+  checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // debugger;
+      const checkedCategories = Array.from(checkboxes)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.nextElementSibling.textContent);
+
+      if (checkedCategories.length === 0) {
+        // show all products if no category is selected
+        products.forEach(function(product) {
+          product.style.display = 'block';
+        });
+      } else {
+        // hide products that don't match the selected categories
+        products.forEach(function(product) {
+          const category = product.querySelector('h3.title-font').textContent;
+          // const category = product.dataset.category;
+          if (checkedCategories.includes(category)) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      }
+    });
+  });
+</script>
+  
+  
   </body>
 </html>
