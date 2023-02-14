@@ -234,12 +234,13 @@ h2 {
     
     
     #image-track > .image {
-    width: 50vmin;
-    height: 70vmin;
+    width: 55vmin !important;
+    height: 75vmin !important;
     }
     
     .lense-horizontal .lense-img {
     width: 5em; 
+    height: 100%;
     }
     
 
