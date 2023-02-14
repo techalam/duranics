@@ -231,6 +231,11 @@ h2 {
 }
 
 @media (max-width: 450px) {
+    
+    .lense-horizontal .lense-img {
+    width: 5em; 
+    }
+    
 
 #productContainer{
    display:flex;
