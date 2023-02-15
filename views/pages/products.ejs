@@ -97,24 +97,14 @@ p{
 }
 label.first-color{
   margin-left: 500px;
-  background-image: url('https://assets.codepen.io/1462889/mat1.jpg');
+  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img1 %>');
 }
 label.color-2{
-  background-image: url('https://assets.codepen.io/1462889/mat2.jpg');
+  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img2 %>');
 }
 label.color-3{
-  background-image: url('https://assets.codepen.io/1462889/mat3.jpg');
+  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img3 %>');
 }
-label.color-4{
-  background-image: url('https://assets.codepen.io/1462889/mat4.jpg');
-}
-label.color-5{
-  background-image: url('https://assets.codepen.io/1462889/mat5.jpg');
-}
-label.color-6{
-  background-image: url('https://assets.codepen.io/1462889/mat6.jpg');
-}
-
 .img-wrap{
   position: absolute;
   top: 100px;
@@ -128,7 +118,7 @@ label.color-6{
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img %>');
+  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img1 %>');
   opacity: 0;
 }
 .for-color-1:checked ~ .img-wrap.chair-1{
@@ -136,37 +126,16 @@ label.color-6{
   animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
 }
 .img-wrap.chair-2{
-  background-image: url('https://assets.codepen.io/1462889/ch2.png');
+  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img2 %>');
 }
 .for-color-2:checked ~ .img-wrap.chair-2{
   opacity: 1;
   animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
 }
 .img-wrap.chair-3{
-  background-image: url('https://assets.codepen.io/1462889/ch3.png');
+  background-image: url('data:image/jpeg;base64,<%= productSingle.base64Img3 %>');
 }
 .for-color-3:checked ~ .img-wrap.chair-3{
-  opacity: 1;
-  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
-}
-.img-wrap.chair-4{
-  background-image: url('https://assets.codepen.io/1462889/ch4.png');
-}
-.for-color-4:checked ~ .img-wrap.chair-4{
-  opacity: 1;
-  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
-}
-.img-wrap.chair-5{
-  background-image: url('https://assets.codepen.io/1462889/ch5.png');
-}
-.for-color-5:checked ~ .img-wrap.chair-5{
-  opacity: 1;
-  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
-}
-.img-wrap.chair-6{
-  background-image: url('https://assets.codepen.io/1462889/ch6.png');
-}
-.for-color-6:checked ~ .img-wrap.chair-6{
   opacity: 1;
   animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
 }
@@ -555,13 +524,7 @@ h5{
 	      	<input class="color-btn for-color-2" type="radio" id="color-2" name="color-btn"/>
 	      	<label class="color-2" for="color-2"></label> 
 	      	<input class="color-btn for-color-3" type="radio" id="color-3" name="color-btn"/>
-	      	<label class="color-3" for="color-3"></label> 
-	      	<input class="color-btn for-color-4" type="radio" id="color-4" name="color-btn"/>
-	      	<label class="color-4" for="color-4"></label> 
-	      	<input class="color-btn for-color-5" type="radio" id="color-5" name="color-btn"/>
-	      	<label class="color-5" for="color-5"></label> 
-	      	<input class="color-btn for-color-6" type="radio" id="color-6" name="color-btn"/>
-	      	<label class="color-6" for="color-6"></label> 
+	      	<label class="color-3" for="color-3"></label>
 	      	<div class="clearfix"></div>
 	      	<div class="info-wrap">
 				<a href="#" class="btn"><i class="uil uil-shopping-cart icon"></i> Add To Cart</a>
