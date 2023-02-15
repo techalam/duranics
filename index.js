@@ -7,7 +7,6 @@ const session = require('express-session');
 // const port = process.env.PORT || 3000;
 var SESSION_SECRET_KEY = "asdfgthftdgcvfgrtdgshycgsfdrefdh";
 // import {createPool} from 'mysql2/promise';
-
 const fs = require('fs');
 const path = require('path');
 const uploadsFolder = path.join(__dirname, 'uploads');
