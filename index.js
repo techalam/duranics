@@ -93,7 +93,7 @@ con.connect();
   var productId = req.params.id;
 
   // console.log(res);
-  con.query(`SELECT price, image, name, description, category FROM products WHERE id = '${productId}'`, (err, result) => {
+  con.query(`SELECT price, image1, image2, image3, name, description, category FROM products WHERE id = '${productId}'`, (err, result) => {
     if (err) throw err;
     console.log("productSingle=",result, result[0]);
 //     var product = images.filter(image =>{
@@ -104,9 +104,11 @@ con.connect();
     const product = [];
     // result.forEach((results) => {
       // var base64Img = new Buffer.from(productS.image, 'binary').toString('base64');
-      var base64Img = productS.image;
+      var base64Img1 = productS.image1;
+      var base64Img2 = productS.image2;
+      var base64Img3 = productS.image3;
 //       var base64Img = base64Img1.substring(8);
-      product.push({ price: productS.price, name: productS.name, id: productS.id, description: productS.description, category: productS.category, base64Img });
+      product.push({ price: productS.price, name: productS.name, id: productS.id, description: productS.description, category: productS.category, base64Img1, base64Img2, base64Img3 });
 
     var productSingle = product[0];
   //   console.log("++++++++++++++++++++++++++");
@@ -212,7 +214,11 @@ app.post('/submit', (req, res) => {
 
 //     });
 
-app.post('/upload', upload.single('image'), (req, res) => {
+app.post('/upload', upload.fields([
+  { name: 'image1', maxCount: 1 },
+  { name: 'image2', maxCount: 1 },
+  { name: 'image3', maxCount: 1 }
+]), (req, res) => {
   //extract form data
   const id = req.body.id;
   const name = req.body.name;
@@ -220,15 +226,21 @@ app.post('/upload', upload.single('image'), (req, res) => {
   const price = req.body.price;
   const sale_price = req.body.sale_price;
   const quantity = req.body.quantity;
-  const imagePath = req.file.path // path of the uploaded file
-  const imageBinary = fs.readFileSync(imagePath);
-   const image = new Buffer.from(imageBinary).toString('base64');
+  const imagePath1 = req.files['image1'][0].path; // path of the uploaded file
+  const imageBinary1 = fs.readFileSync(imagePath1);
+  const image1 = new Buffer.from(imageBinary1).toString('base64');
+  const imagePath2 = req.files['image2'][0].path; // path of the uploaded file
+  const imageBinary2 = fs.readFileSync(imagePath2);
+  const image2 = new Buffer.from(imageBinary2).toString('base64');
+  const imagePath3 = req.files['image3'][0].path; // path of the uploaded file
+  const imageBinary3 = fs.readFileSync(imagePath3);
+  const image3 = new Buffer.from(imageBinary3).toString('base64');
   const category = req.body.category;
   const type = req.body.type;
 
   //insert data into products table
-  const query = `INSERT INTO products (id, name, description, price, sale_price, quantity, image, category, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-  con.query(query, [id, name, description, price, sale_price, quantity, image, category, type], (error, results) => {
+  const query = `INSERT INTO products (id, name, description, price, sale_price, quantity, image1, category, type, image2, image3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  con.query(query, [id, name, description, price, sale_price, quantity, image1, category, type, image2, image3], (error, results) => {
     if (error) {
       //handle error
       console.log(error);
@@ -266,13 +278,13 @@ app.get('/aboutus', (req, res) => {
 
 app.get('/', function (req, res) {
   console.log("Came to this");
-  con.query("SELECT price, image, name, id, description , category FROM products", (err, result) => {
+  con.query("SELECT price, image1, name, id, description , category FROM products", (err, result) => {
     console.log({ result });
     if (err) throw err;
     const images = [];
     result.forEach((results) => {
 //       var base64Image = new Buffer.from(results.image, 'binary').toString('base64');
-      var base64Image = results.image;
+      var base64Image = results.image1;
       images.push({ price: results.price, name: results.name, id: results.id, description: results.description, category: results.category, base64Image });
       const limitedItems = images.slice(0, 3);
       console.log(result);
@@ -284,7 +296,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/product', (reqq, ress) => {
-  con.query("SELECT price, image, name, id, description , category FROM products", (err, result) => {
+  con.query("SELECT price, image1, name, id, description , category FROM products", (err, result) => {
     console.log({ result });
     if (err) throw err;
     const images = [];
