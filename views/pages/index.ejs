@@ -18,7 +18,37 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>-->
   <!-- <script src="script.js"></script>  -->
 
-  
+  <style>
+  .wrapper {
+  /* height: 100vh; */
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.typing-demo {
+  width: 23ch;
+  animation: typing 4s steps(22), blink .5s step-end infinite alternate;
+  animation-delay: 4s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+</style> 
 
   
 </head>
@@ -31,6 +61,8 @@
     <header class=" body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4  md:border-gray-400	flex flex-wrap items-center text-base justify-right" id="navbar">
+                  <a class="mr-5 px-3 hover:text-gray-900" href="index"><img src="img/logoname.jpeg" alt="" style="width:10vw; mix-blend-mode: multiply;"></a>
+
           <a class="mr-5 px-3 hover:text-gray-900" href="index">Home</a>
           <a class="mr-5 px-3 hover:text-gray-900" href="product">Products</a>
           <a class="mr-5 px-3 hover:text-gray-900" href="enquiry">Enquiry</a>
@@ -96,6 +128,14 @@
   </section>
 
   <section>
+  
+  <div class="wrapper">
+      <div class="typing-demo">
+        Welcome To The <span style="color: green;">Duranics.</span>
+      </div>
+  </div>
+  
+  
     <div class="flex-container">
       <% images.forEach(function(image){ %>
       <div class="flex-item bg-one tilt">
