@@ -109,6 +109,9 @@ body {
 #navbar {
     display: flex;
     justify-content: center;
+    background: linear-gradient(to left, transparent, #fff, transparent);
+    color: black;
+    width: 90vw;
 }
 
 #navbar a:hover {
