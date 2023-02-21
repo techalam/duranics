@@ -236,7 +236,9 @@ h2 {
 .menuTags{
 padding-left: 0.75rem;
     padding-right: 0.75rem;
-    margin-right: 1.25rem
+    margin-right: 1.25rem;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 @media (max-width: 450px) {
@@ -245,6 +247,9 @@ padding-left: 0.75rem;
 padding-left: 0rem;
     padding-right: 0rem;
     margin-right: 0.8rem
+}
+    #logoImg{
+        width:20vw;
 }
     
     
