@@ -233,7 +233,19 @@ h2 {
     border-radius: 5px;
 }
 
+.menuTags{
+padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-right: 1.25rem
+}
+
 @media (max-width: 450px) {
+    
+    .menuTags{
+padding-left: 0rem;
+    padding-right: 0rem;
+    margin-right: 0.8rem
+}
     
     
     #image-track > .image {
