@@ -3,7 +3,7 @@ var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var mysql = require('mysql2');
 const multer = require("multer");
-const session = require('express-session');
+//const session = require('express-session');
 // const port = process.env.PORT || 3000;
 var SESSION_SECRET_KEY = "asdfgthftdgcvfgrtdgshycgsfdrefdh";
 // import {createPool} from 'mysql2/promise';
