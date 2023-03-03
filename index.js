@@ -31,7 +31,6 @@ const con = mysql.createConnection({
 })
 
 
-
 // mysql.createConnection({
 
 //   host: "localhost",
