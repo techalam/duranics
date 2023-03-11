@@ -13,7 +13,7 @@
 .waviy {
   position: relative;
   /* border-bottom: 10px solid black; */
-  -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0,0,0,.2));
+  -webkit-box-reflect: below -50px linear-gradient(transparent, rgba(0,0,0,.2));
   font-size: 8vw;
   /* margin: auto; */
   display: flex;
@@ -241,7 +241,46 @@ padding-left: 0.75rem;
     text-decoration: inherit;
 }
 
+@media (min-width: 650px) {
+
+  #rainbow{
+    width: 35vw;
+  }
+
+.waviy{
+  justify-content: right;
+  font-size: 4.5vw;
+  top: 5%;
+}
+.cta-text{
+  justify-content: right;
+  align-items: flex-end;
+}
+.waviy span{
+  color: #363535;
+}
+
+}
+
 @media (max-width: 450px) {
+
+  .potmImg{
+    padding-top: 0 !important;
+padding-bottom: 0 !important;
+
+  }
+
+  #rainbow{
+    margin-bottom: 2em;
+  }
+
+  .analytics{
+    width: 33% !important;
+  }
+
+  .slideshow-container{
+    height: 200px !important;
+  }
     
     .menuTags{
 padding-left: 0rem;
